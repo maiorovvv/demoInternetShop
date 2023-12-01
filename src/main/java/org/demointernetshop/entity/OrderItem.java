@@ -1,11 +1,11 @@
 package org.demointernetshop.entity;
 
 import java.math.BigDecimal;
-import java.util.List;
 
-public class ProductInfo {
+public class OrderItem {
+    private Integer id;
     private Product product;
-    private BigDecimal price;
     private int quantity;
+    private BigDecimal price;
 
 }

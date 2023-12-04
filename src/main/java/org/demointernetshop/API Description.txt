@@ -20,6 +20,8 @@
      },
      {}
  ]
+
+
  - передать список категорий
   Method: GET
   URL: /products/category
@@ -31,7 +33,11 @@
        {}
    ]
 
+
+
    - передать товары по категории
+   - передать товары по категории и диапазону цен
+
      Method: GET
      URL: /products/category/{category_id}
      @GetMapping(/products/category/{category_id})
@@ -55,96 +61,43 @@
           {}
       ]
 
-
- - передать товары по категории в ценовом диапазоне
+- передать список производителей
   Method: GET
-  URL: /products/category_price
-  Request:
-  {
-    "category_id": 1,
-    "min_price": 1000,
-    "max_price": 1500
-  }
+  URL: /products/manufacturer
+  Request: -
   Response:
- [
-     {
-        "id":
-        "name":
-        "description":
-        "manufacturer": {
-                            "manufacturer_name":
-                          }
-        "productInfo": {
-            "price":
-            "quantity":
-        }
-     },
-     {}
- ]
- - передать товары по категории и по производителю
-  Method: GET
-  URL: /products/category_manufacturer
-  Request:
-  {
-    "category_name":
-    "manufacturer_name":
-  }
-  Response:
-    Response:
    [
-       {
-          "id":
-          "name":
-          "description":
-          "manufacturer": {
-                            "manufacturer_name":
-                          }
-          "productInfo": {
-              "price":
-              "quantity":
-          }
-       },
-       {}
+    {"id" : 1,
+     "name": "Apple",
+     "country": "China"},
+     {}
    ]
+
+
+ - передать товары по категории и по производителю
  - передать товары по категории и по производителю и по цене
   Method: GET
   URL: /products/category_manufacturer_price
 
        @GetMapping(/products/category_manufacturer_price/{category_id}/)
        public List<ProductResponseDTO> getProducts=ByCategoryAndPrice(@PathVariable("category_id") Integer categoryId,
-                                                                      @RequestParam("manufacturer") String manufacturer,
+                                                                      @RequestParam("manufacturer") Integer manufacturerId,
                                                                       @RequestParam(defaultValue = "0") Double minPrice,
                                                                       @RequestParam(defaultValue = "Double.MAX_VALUE") Double maxPrice) {}
 
-
-
   Request:
-  {
-    "category_name":
-    "manufacturer_name":
-    "min_price":
-    "max_price":
-  }
   Response:
-    Response:
-   [
-       {
-          "id":
-          "name":
-          "description":
-          "category":{
-                        "category_name":
-                     }
-          "manufacturer":{
-                          "manufacturer_name":
-                         }
-          "productInfo": {
-              "price":
-              "quantity":
-          }
-       },
-       {}
-   ]
+ [
+          {
+                  "id": 1,
+                  "name": "iPhone 15",
+                  "description": "iPhone 15 ....",
+                  "productPrice": 1500,
+                  "productQuantity": 24
+                  },
+          {}
+      ]
+
  - передать данные о количестве конкретного товара
   Method: GET
   URL: /products/product_quantity/{product_id}
@@ -153,21 +106,28 @@
  {
     "quantity":
  }
+
+
  - показать конкретный товар по id
   Method: GET
   URL: /products/product/{product_id}
   Request:-
   Response:
  {
-    "id":
-    "name":
-    "description":
-    "manufacturer":
-    "productInfo": {
-        "price":
-        "quantity":
-    }
- }
+         "id": 1,
+         "name": "iPhone 15",
+         "description": "iPhone 15 ....",
+         "category": { "id" : 1,
+                      "categoryName": "phones"}
+         "manufacturer": {"id" : 1,
+                         "name": "Apple",
+                         "country": "China"}
+         "productPrice": 1500,
+         "productQuantity": 24
+         }
+
+
+         =========================================================================
 
  Работа с пользователем:
  - регистрация
@@ -209,6 +169,9 @@ Response:
    "success":
    "message":
  }
+
+
+ =========================================================================
  Работа с заказами:
  - показать информацию по корзине пользователя
 Method: GET

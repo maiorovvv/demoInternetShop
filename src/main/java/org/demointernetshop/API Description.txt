@@ -48,10 +48,12 @@
      Request: -
      Response:
       [
-          {
+           {
                   "id": 1,
                   "name": "iPhone 15",
                   "description": "iPhone 15 ....",
+                  "category": { "id" : 1,
+                               "categoryName": "phones"}
                   "manufacturer": {"id" : 1,
                                   "name": "Apple",
                                   "country": "China"}
@@ -88,10 +90,15 @@
   Request:
   Response:
  [
-          {
+           {
                   "id": 1,
                   "name": "iPhone 15",
                   "description": "iPhone 15 ....",
+                  "category": { "id" : 1,
+                               "categoryName": "phones"}
+                  "manufacturer": {"id" : 1,
+                                  "name": "Apple",
+                                  "country": "China"}
                   "productPrice": 1500,
                   "productQuantity": 24
                   },
@@ -113,7 +120,7 @@
   URL: /products/product/{product_id}
   Request:-
   Response:
- {
+  {
          "id": 1,
          "name": "iPhone 15",
          "description": "iPhone 15 ....",
@@ -127,7 +134,7 @@
          }
 
 
-         =========================================================================
+===============================================================================================
 
  Работа с пользователем:
  - регистрация

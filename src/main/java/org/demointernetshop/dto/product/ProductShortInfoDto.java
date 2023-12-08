@@ -4,15 +4,14 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.math.BigDecimal;
 
-@Schema(name = "ProductShort", description = "Product data")
-
-public class ProductCartInfoDto {
+@Schema(name = "Product Short Info", description = "Product shot data")
+public class ProductShortInfoDto {
     @Schema(description = "Product identifier", example = "1")
-    Integer id;
+    private Integer id;
     @Schema(description = "Name of the product", example = "iPhone 15")
-    String name;
+    private String name;
     @Schema(description = "Price of the product", example = "1500.0")
-    BigDecimal price;
+    private BigDecimal price;
     @Schema(description = "Quantity of the product", example = "24")
-    int quantity;
+    private Integer quantity;
 }

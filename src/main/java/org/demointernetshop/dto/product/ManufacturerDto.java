@@ -6,10 +6,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 public class ManufacturerDto {
     @Schema(description = "Manufacturer identifier", example = "1")
-    Integer id;
+    private Integer id;
     @Schema(description = "Name of the manufacturer", example = "Apple")
-    String name;
+    private String name;
 
     @Schema(description = "Country of the manufacturer", example = "USA")
-    String country;
+    private String country;
 }

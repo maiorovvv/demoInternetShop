@@ -1,7 +1,7 @@
-package org.demointernetshop.dto;
+package org.demointernetshop.dto.cart;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import org.demointernetshop.dto.product.ProductCartInfoDto;
+import org.demointernetshop.dto.product.ProductShortInfoDto;
 
 import java.util.List;
 
@@ -11,6 +11,6 @@ public class CartDto {
     private Integer id;
     @Schema(description = "User identifier", example = "14")
     private Integer userId;
-    @Schema(description = "Products", example = "14")
-    List<ProductCartInfoDto> products;
+    @Schema(description = "Products")
+    private List<ProductShortInfoDto> products;
 }

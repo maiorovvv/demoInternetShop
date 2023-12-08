@@ -38,13 +38,18 @@
         @GetMapping(/products/category)
         public List<CategoryDTO> getAllCategories()
 
+- передать список категорий с данными о максимальной и минимальной цене товаров в данной категории
+  Method: GET
+  URL: /products/category/{category_id}/price
+  Request: -
 
          @GetMapping(/products/category/{category_id}/price)
                 public List<CategoryDTO> getCategoryPrices(@PathVariable("category_id") Integer categoryId)
 
                 Response:
                    [
-                       { "id" : 1,
+                       {
+
                          "categoryName": "phones",
                          minPrice: 30,
                          maxPrice: 4988

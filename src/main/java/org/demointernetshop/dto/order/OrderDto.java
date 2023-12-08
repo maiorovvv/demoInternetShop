@@ -1,11 +1,17 @@
 package org.demointernetshop.dto.order;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.demointernetshop.dto.product.ProductShortInfoDto;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Schema(name = "Order", description = "Order data")
 public class OrderDto {
     @Schema(description = "Product identifier", example = "1")

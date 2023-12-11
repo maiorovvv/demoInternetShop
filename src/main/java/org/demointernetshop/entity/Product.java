@@ -22,6 +22,7 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "manufacturer_id")
     private Manufacturer manufacturer;
-
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
+    private ProductInfo productInfo;
 
 }

@@ -17,4 +17,7 @@ public interface ProductInfoRepository extends JpaRepository<ProductInfo, Intege
     "WHERE pi.product.category.id = :categoryId " +
     "GROUP BY pi.product.category.id, pi.product.category.categoryName")
     Optional<CategoryWithPricesDto> findPriceByCategory(Integer categoryId);
+
+    Optional<ProductInfo> findByProductId(Integer productId);
+
 }

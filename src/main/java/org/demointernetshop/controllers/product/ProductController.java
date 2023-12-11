@@ -1,7 +1,6 @@
 package org.demointernetshop.controllers.product;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.product.CategoryDto;
 import org.demointernetshop.dto.product.ProductDto;
 import org.demointernetshop.dto.product.ProductQuantityResponseDto;
 import org.demointernetshop.services.ProductService;

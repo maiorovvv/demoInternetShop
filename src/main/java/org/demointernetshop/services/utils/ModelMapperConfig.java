@@ -3,7 +3,7 @@ package org.demointernetshop.services.utils;
 
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+
 public class ModelMapperConfig {
 //    public ModelMapper modelMapper() {
 //        ModelMapper modelMapper = new ModelMapper();

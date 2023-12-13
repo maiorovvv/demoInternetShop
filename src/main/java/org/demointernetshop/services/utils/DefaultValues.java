@@ -22,7 +22,7 @@ public class DefaultValues {
 
 
     public Role getDefaultRole() {
-        return roleRepository.findById(1).orElseThrow(() -> new RuntimeException("Default role not found!"));
+        return roleRepository.findById(2).orElseThrow(() -> new RuntimeException("Default role not found!"));
     }
 
     public OrderStatus getDefaultOrderStatus() {

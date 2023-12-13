@@ -257,4 +257,11 @@
     <changeSet id="add-tag-initial-setup" author="IgorKlein">
         <tagDatabase tag="initial-setup"/>
     </changeSet>
+
+<!--    <changeSet id="rollback-product-table" author="author">-->
+<!--        <dropTable tableName="product" />-->
+<!--    </changeSet>-->
+
+<!--    liquibase rollback "rollback-point-create-role-table"-->
+
 </databaseChangeLog>

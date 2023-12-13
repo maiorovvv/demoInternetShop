@@ -15,9 +15,9 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    @PostMapping("/{cart_id}")
-    public OrderDto createOrder(@PathVariable("cart_id") Integer cartId, @RequestBody OrderRequestDto request){
-        return orderService.createOrder(cartId,request);
+    @PostMapping()
+    public OrderDto createOrder(@RequestBody OrderRequestDto request){
+        return orderService.createOrder(request);
     }
 
     @DeleteMapping("{order_id}")

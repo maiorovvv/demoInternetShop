@@ -10,6 +10,7 @@ import org.demointernetshop.repository.CartItemRepository;
 import org.demointernetshop.repository.CartRepository;
 import org.demointernetshop.repository.CategoryRepository;
 import org.demointernetshop.repository.ProductRepository;
+import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.Converters;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +40,7 @@ public class CartService {
             CartItem cartItem = cartItemOptional.get();
             cartItem.setQuantity(request.getCount());
         } else {
-            Product product = productRepository.findById(request.getProduct_id()).orElseThrow(() -> new RuntimeException("Product not found"));
+            Product product = productRepository.findById(request.getProduct_id()).orElseThrow(() -> new NotFoundException("Product not found"));
 
             CartItem newCartItem = new CartItem();
             newCartItem.setProduct(product);

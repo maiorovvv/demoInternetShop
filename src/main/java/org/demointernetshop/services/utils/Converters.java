@@ -14,7 +14,6 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class Converters {
     public CategoryDto formCategoryToDto(Category category) {

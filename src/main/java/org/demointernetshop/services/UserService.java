@@ -8,6 +8,7 @@ import org.demointernetshop.entity.Role;
 import org.demointernetshop.entity.User;
 import org.demointernetshop.repository.RoleRepository;
 import org.demointernetshop.repository.UserRepository;
+import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.DefaultValues;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,6 @@ import java.time.LocalDateTime;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
     private final DefaultValues defaultValues;
     public UserDto createUser(UserRegistrationDto request) {
         User newUser = User.builder()
@@ -39,7 +39,7 @@ public class UserService {
 
     public UserDto updateUser(Integer userId, UserUpdateDto request) {
         User existingUser = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User with id " + userId + " not found!"));
+                .orElseThrow(() -> new NotFoundException("User with id " + userId + " not found!"));
 
         existingUser.setUsername(request.getUsername());
         existingUser.setEmail(request.getEmail());

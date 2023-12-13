@@ -7,6 +7,7 @@ import org.demointernetshop.entity.Category;
 import org.demointernetshop.entity.ProductInfo;
 import org.demointernetshop.repository.CategoryRepository;
 import org.demointernetshop.repository.ProductInfoRepository;
+import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.Converters;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -59,7 +60,7 @@ public class CategoryService {
 
 
         return productInfoRepository.findPriceByCategory(categoryId)
-                .orElseThrow(() -> new RuntimeException("Category not found or no products in the category"));
+                .orElseThrow(() -> new NotFoundException("Category not found or no products in the category"));
 
     }
 }

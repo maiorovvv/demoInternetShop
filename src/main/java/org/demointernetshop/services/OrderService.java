@@ -6,12 +6,15 @@ import org.demointernetshop.dto.order.OrderRequestDto;
 import org.demointernetshop.dto.product.ProductShortInfoDto;
 import org.demointernetshop.entity.*;
 import org.demointernetshop.repository.*;
+import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.DefaultValues;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,10 +22,12 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final CartRepository cartRepository;
+    private final CartItemRepository cartItemRepository;
     private final UserRepository userRepository;
     private final DefaultValues defaultValues;
 
     private final ProductInfoRepository productInfoRepository;
+    private final OrderItemRepository orderItemRepository;
 
 
     public OrderDto createOrder(OrderRequestDto request) {
@@ -62,10 +67,10 @@ public class OrderService {
          */
 
         Cart cartById = cartRepository.findById(request.getCartId())
-                .orElseThrow(() -> new RuntimeException("Cart with id " + request.getCartId() + " not found!"));
+                .orElseThrow(() -> new NotFoundException("Cart with id " + request.getCartId() + " not found!"));
 
         User userById = userRepository.findById(request.getUserId())
-                .orElseThrow(() -> new RuntimeException("User with id " + request.getUserId() + " not found!"));
+                .orElseThrow(() -> new NotFoundException("User with id " + request.getUserId() + " not found!"));
 
 
         Order newOrder = Order.builder()
@@ -84,17 +89,19 @@ public class OrderService {
         List<OrderItem> orderItems = request.getProducts().stream()
                 .map(productDto -> {
                     ProductInfo productInfo = productInfoRepository.findByProductId(productDto.getId())
-                            .orElseThrow(() -> new RuntimeException("ProductInfo not found!"));
+                            .orElseThrow(() -> new NotFoundException("ProductInfo not found!"));
                     OrderItem orderItem = new OrderItem();
                     orderItem.setProduct(productInfo.getProduct());
                     orderItem.setQuantity(productDto.getQuantity());
                     orderItem.setPrice(productInfo.getPrice());
                     orderItem.setOrder(savedOrder);
-                    return orderItem;
+                    return orderItemRepository.save(orderItem);
                 })
                 .toList();
 
         savedOrder.setOrderItems(orderItems);
+
+        clearCartItems(cartById);
 
         return buidOrderDto(savedOrder, request);
 
@@ -121,5 +128,21 @@ public class OrderService {
     }
 
 
+    private void clearCartItems(Cart cart) {
+        cartItemRepository.deleteByCart(cart);
+        cart.setCartItems(Collections.emptyList());
+        cartRepository.save(cart);
+    }
 
+    public void deleteOrder(Integer orderId) {
+        Optional<Order> orderOptional = orderRepository.findById(orderId);
+
+        if (orderOptional.isPresent()){
+            Order order = orderOptional.get();
+            orderRepository.delete(order);
+        } else {
+            throw new NotFoundException("Order with id " + orderId + " not found!");
+        }
+
+    }
 }

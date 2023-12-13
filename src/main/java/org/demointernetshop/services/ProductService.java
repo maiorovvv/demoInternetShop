@@ -10,6 +10,7 @@ import org.demointernetshop.repository.CategoryRepository;
 import org.demointernetshop.repository.ManufacturerRepository;
 import org.demointernetshop.repository.ProductInfoRepository;
 import org.demointernetshop.repository.ProductRepository;
+import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.Converters;
 import org.springframework.stereotype.Service;
 
@@ -51,8 +52,8 @@ public class ProductService {
 
     public List<ProductDto> getProductsByCategoryAndManufacturerAndPrice(Integer categoryId, Integer manufacturerId, Double minPrice, Double maxPrice) {
         return productRepository.findProductsByCategoryAndManufacturer(
-                categoryRepository.findById(categoryId).orElseThrow(() -> new RuntimeException("Not found!")),
-                manufacturerRepository.findById(manufacturerId).orElseThrow(() -> new RuntimeException("Not found!")))
+                categoryRepository.findById(categoryId).orElseThrow(() -> new NotFoundException("Not found!")),
+                manufacturerRepository.findById(manufacturerId).orElseThrow(() -> new NotFoundException("Not found!")))
                 .stream()
                 .filter(product -> product.getProductInfo().getPrice().doubleValue() >= minPrice && product.getProductInfo().getPrice().doubleValue() <= maxPrice)
                 .map(converters::fromProductToDto)

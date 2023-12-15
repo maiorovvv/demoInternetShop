@@ -71,6 +71,8 @@ public class Converters {
                 .description(product.getDescription())
                 .category(formCategoryToDto(product.getCategory()))
                 .manufacturer(fromManufacturerToDto(product.getManufacturer()))
+                .productPrice(product.getProductInfo().getPrice())
+                .productQuantity(product.getProductInfo().getQuantity())
                 .build();
     }
 

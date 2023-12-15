@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.demointernetshop.dto.product.ProductDto;
 import org.demointernetshop.dto.product.ProductQuantityResponseDto;
 import org.demointernetshop.entity.Category;
+import org.demointernetshop.entity.Manufacturer;
 import org.demointernetshop.entity.Product;
 import org.demointernetshop.entity.ProductInfo;
 import org.demointernetshop.repository.CategoryRepository;

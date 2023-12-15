@@ -2,10 +2,12 @@ package org.demointernetshop.services.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.NoArgsConstructor;
 import org.demointernetshop.dto.cart.CartDto;
 import org.demointernetshop.dto.product.*;
 import org.demointernetshop.entity.*;
+import org.demointernetshop.entity.cart.Cart;
+import org.demointernetshop.entity.cart.CartItem;
+import org.demointernetshop.entity.product.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

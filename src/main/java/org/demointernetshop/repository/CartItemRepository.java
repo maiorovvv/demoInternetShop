@@ -1,7 +1,7 @@
 package org.demointernetshop.repository;
 
-import org.demointernetshop.entity.Cart;
-import org.demointernetshop.entity.CartItem;
+import org.demointernetshop.entity.cart.Cart;
+import org.demointernetshop.entity.cart.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

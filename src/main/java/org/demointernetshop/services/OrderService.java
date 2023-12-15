@@ -5,6 +5,8 @@ import org.demointernetshop.dto.order.OrderDto;
 import org.demointernetshop.dto.order.OrderRequestDto;
 import org.demointernetshop.dto.product.ProductShortInfoDto;
 import org.demointernetshop.entity.*;
+import org.demointernetshop.entity.cart.Cart;
+import org.demointernetshop.entity.product.ProductInfo;
 import org.demointernetshop.repository.*;
 import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.DefaultValues;

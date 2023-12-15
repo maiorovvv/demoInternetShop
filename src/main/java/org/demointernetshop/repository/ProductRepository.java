@@ -1,12 +1,11 @@
 package org.demointernetshop.repository;
 
-import org.demointernetshop.dto.product.ProductDto;
 import org.demointernetshop.entity.*;
+import org.demointernetshop.entity.product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Repository

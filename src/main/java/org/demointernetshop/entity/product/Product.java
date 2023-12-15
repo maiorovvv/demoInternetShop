@@ -1,9 +1,11 @@
-package org.demointernetshop.entity;
+package org.demointernetshop.entity.product;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.demointernetshop.entity.Category;
+import org.demointernetshop.entity.Manufacturer;
 
 
 @Entity

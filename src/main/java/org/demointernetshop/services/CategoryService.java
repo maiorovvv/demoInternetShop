@@ -3,19 +3,13 @@ package org.demointernetshop.services;
 import lombok.RequiredArgsConstructor;
 import org.demointernetshop.dto.product.CategoryDto;
 import org.demointernetshop.dto.product.CategoryWithPricesDto;
-import org.demointernetshop.entity.Category;
-import org.demointernetshop.entity.ProductInfo;
 import org.demointernetshop.repository.CategoryRepository;
 import org.demointernetshop.repository.ProductInfoRepository;
 import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.Converters;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
-import java.math.BigDecimal;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 
 
 @Service

@@ -1,9 +1,10 @@
-package org.demointernetshop.entity;
+package org.demointernetshop.entity.cart;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.demointernetshop.entity.product.Product;
 
 @Entity
 @Data

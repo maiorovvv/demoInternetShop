@@ -1,22 +1,25 @@
-package org.demointernetshop.entity;
+package org.demointernetshop.entity.product;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.math.BigDecimal;
+
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cart {
+public class ProductInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CartItem> cartItems;
+    @JoinColumn(name = "product_id")
+    private Product product;
+    private BigDecimal price;
+    private int quantity;
+
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class MailSender {
+public class DemoInternetMailSender {
 
     private final JavaMailSender javaMailSender;
 

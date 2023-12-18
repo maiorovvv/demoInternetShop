@@ -41,11 +41,11 @@ public class ProductService {
 
 
     public ProductDto getProductById(Integer productId) {
-        return converters.fromProductToDto(productRepository.findById(productId).orElseThrow(() -> new RuntimeException("Not found!")));
+        return converters.fromProductToDto(productRepository.findById(productId).orElseThrow(() -> new NotFoundException("Not found!")));
     }
 
     public ProductQuantityResponseDto getProductQuantity(Integer productId) {
-        ProductInfo pi = productInfoRepository.findByProductId(productId).orElseThrow(() -> new RuntimeException("Not found!"));
+        ProductInfo pi = productInfoRepository.findByProductId(productId).orElseThrow(() -> new NotFoundException("Not found!"));
         return new ProductQuantityResponseDto(pi.getQuantity());
     }
 

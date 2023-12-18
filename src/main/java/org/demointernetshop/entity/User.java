@@ -26,4 +26,5 @@ public class User {
     private Role role;
     private LocalDateTime createData;
     private LocalDateTime lastVisitData;
+    private String apiKey;
 }

@@ -31,9 +31,10 @@ public class UserService {
                 .lastVisitData(LocalDateTime.now())
                 .build();
 
-        User sevedUser = userRepository.save(newUser);
+        User savedUser = userRepository.save(newUser);
+        savedUser.setApiKey("newKeyForNewUser" + savedUser.getId());
 
-        return buildUserDto(sevedUser);
+        return buildUserDto(savedUser);
 
     }
 

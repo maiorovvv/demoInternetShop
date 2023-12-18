@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.demointernetshop.entity.email.EmailRequest;
 
 import org.demointernetshop.mail.DemoInternetMailSender;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmailController {
     private final DemoInternetMailSender mailSender;
 
+
+    @PostMapping("/send-mail")
     public String sendEmail(@RequestBody EmailRequest request){
         mailSender.send(request.getTo(), request.getSubject(), request.getText());
         return  "Email sent successfully!";

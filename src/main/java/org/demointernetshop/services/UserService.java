@@ -32,7 +32,6 @@ public class UserService {
                 .build();
 
         User savedUser = userRepository.save(newUser);
-        savedUser.setApiKey("newKeyForNewUser" + savedUser.getId());
 
         return buildUserDto(savedUser);
 

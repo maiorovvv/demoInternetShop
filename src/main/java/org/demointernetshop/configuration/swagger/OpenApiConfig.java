@@ -1,16 +1,18 @@
 package org.demointernetshop.configuration.swagger;
 
+
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
-import org.springdoc.core.models.GroupedOpenApi;
+import org.springdoc.core.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 @Configuration
-public class SwaggerConfig {
+public class OpenApiConfig {
 
     @Bean
     public GroupedOpenApi publicApi() {
@@ -32,15 +34,17 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("My Api")
+                        .title("My API")
                         .version("v1")
-                        .description("Description"))
+                        .description("My API description"))
                 .components(new Components()
-                        .addSecuritySchemes("Bearer", new SecurityScheme()
-                                .type(SecurityScheme.Type.HTTP)
-                                .scheme("bearer")
-                                .bearerFormat("JWT")
+                        .addSecuritySchemes("Bearer",
+                                new SecurityScheme()
+                                        .type(SecurityScheme.Type.HTTP)
+                                        .scheme("bearer")
+                                        .bearerFormat("JWT")
                         ))
                 .addSecurityItem(new SecurityRequirement().addList("Bearer"));
     }
 }
+

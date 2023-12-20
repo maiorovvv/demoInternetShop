@@ -46,39 +46,33 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MailAuthenticationException.class)
     public ResponseEntity<String> handleMailAuthenticationException(MailAuthenticationException e){
-        e.printStackTrace();
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body("Mail Authentication Error");
     }
 
     @ExceptionHandler(MailSendException.class)
     public ResponseEntity<String> handleMailSendException(MailSendException e){
-        e.printStackTrace();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("Mail Send Error");
     }
 
     @ExceptionHandler(MailParseException.class)
     public ResponseEntity<String> handleMailParseException(MailParseException e){
-        e.printStackTrace();
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body("Mail Parse Error");
     }
     @ExceptionHandler(MessagingException.class)
     public ResponseEntity<String> handleMessagingException(MessagingException e){
-        e.printStackTrace();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("Messaging Error");
     }
     @ExceptionHandler(IOException.class)
     public ResponseEntity<String> handleIOException(IOException e){
-        e.printStackTrace();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("IO Error");
     }
     @ExceptionHandler(InvalidJwtException.class)
     public ResponseEntity<String> handlerInvalidJwtException(InvalidJwtException e){
-        e.printStackTrace();
         return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 }

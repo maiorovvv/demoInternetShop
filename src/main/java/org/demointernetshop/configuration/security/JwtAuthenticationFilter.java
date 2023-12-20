@@ -4,9 +4,9 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import liquibase.util.StringUtil;
 import lombok.RequiredArgsConstructor;
 
+import org.demointernetshop.services.auth.CustomUserDetailService;
 import org.demointernetshop.services.auth.JwtTokenProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -20,7 +20,7 @@ import java.io.IOException;
 
 @Component
 @RequiredArgsConstructor
-public class JwtAuthenticationFilter  {
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtTokenProvider tokenProvider;
     private final CustomUserDetailService customUserDetailService;
@@ -31,8 +31,8 @@ public class JwtAuthenticationFilter  {
                 String jwt = getJwtFromRequest(request);
 
                 if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
-                    String userName = tokenProvider.getManagerNameFromJWT(jwt);
-                    UserDetails userDetails = customUserDetailService.loadUserByUserName(userName);
+                    String userName = tokenProvider.getUserNameFromJWT(jwt);
+                    UserDetails userDetails = customUserDetailService.loadUserByUsername(userName);
                     Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 }

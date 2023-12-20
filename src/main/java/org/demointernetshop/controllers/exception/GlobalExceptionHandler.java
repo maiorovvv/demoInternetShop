@@ -2,6 +2,7 @@ package org.demointernetshop.controllers.exception;
 
 import jakarta.mail.MessagingException;
 import jakarta.validation.ConstraintViolationException;
+import org.demointernetshop.services.exceptions.InvalidJwtException;
 import org.demointernetshop.services.exceptions.IsAlreadyExistException;
 import org.demointernetshop.services.exceptions.NotFoundException;
 import org.springframework.http.HttpStatus;
@@ -74,5 +75,10 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("IO Error");
+    }
+    @ExceptionHandler(InvalidJwtException.class)
+    public ResponseEntity<String> handlerInvalidJwtException(InvalidJwtException e){
+        e.printStackTrace();
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 }

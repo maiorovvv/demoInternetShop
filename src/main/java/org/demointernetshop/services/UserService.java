@@ -10,6 +10,7 @@ import org.demointernetshop.repository.RoleRepository;
 import org.demointernetshop.repository.UserRepository;
 import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.DefaultValues;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,12 +21,13 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final DefaultValues defaultValues;
+    private final PasswordEncoder passwordEncoder;
     public UserDto createUser(UserRegistrationDto request) {
         User newUser = User.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .phone(request.getPhone())
-                .password(request.getPassword())
+                .password(passwordEncoder.encode(request.getPassword()))
                 .role(defaultValues.getDefaultRole())
                 .createData(LocalDateTime.now())
                 .lastVisitData(LocalDateTime.now())
@@ -44,7 +46,7 @@ public class UserService {
         existingUser.setUsername(request.getUsername());
         existingUser.setEmail(request.getEmail());
         existingUser.setPhone(request.getPhone());
-        existingUser.setPassword(request.getPassword());
+        existingUser.setPassword(passwordEncoder.encode(request.getPassword()));
         existingUser.setLastVisitData(LocalDateTime.now());
         User sevedUser = userRepository.save(existingUser);
 

@@ -1,9 +1,9 @@
 package org.demointernetshop.controllers.user;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.user.UserDto;
-import org.demointernetshop.dto.user.UserRegistrationDto;
-import org.demointernetshop.dto.user.UserUpdateDto;
+import org.demointernetshop.model.dto.user.UserDto;
+import org.demointernetshop.model.dto.user.UserRegistrationDto;
+import org.demointernetshop.model.dto.user.UserUpdateDto;
 import org.demointernetshop.services.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;

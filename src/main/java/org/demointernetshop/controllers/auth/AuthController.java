@@ -2,9 +2,8 @@ package org.demointernetshop.controllers.auth;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
-import org.demointernetshop.dto.auth.AuthRequest;
-import org.demointernetshop.dto.auth.AuthResponse;
+import org.demointernetshop.model.dto.auth.AuthRequest;
+import org.demointernetshop.model.dto.auth.AuthResponse;
 import org.demointernetshop.services.auth.JwtTokenProvider;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

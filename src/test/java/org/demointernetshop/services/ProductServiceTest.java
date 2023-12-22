@@ -1,7 +1,7 @@
 package org.demointernetshop.services;
 
-import org.demointernetshop.dto.product.ProductDto;
-import org.demointernetshop.entity.product.Product;
+import org.demointernetshop.model.dto.product.ProductDto;
+import org.demointernetshop.model.entity.product.Product;
 import org.demointernetshop.repository.CategoryRepository;
 import org.demointernetshop.repository.ManufacturerRepository;
 import org.demointernetshop.repository.ProductInfoRepository;
@@ -15,7 +15,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 

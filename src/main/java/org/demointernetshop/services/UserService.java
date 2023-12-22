@@ -1,12 +1,10 @@
 package org.demointernetshop.services;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.user.UserDto;
-import org.demointernetshop.dto.user.UserRegistrationDto;
-import org.demointernetshop.dto.user.UserUpdateDto;
-import org.demointernetshop.entity.Role;
-import org.demointernetshop.entity.User;
-import org.demointernetshop.repository.RoleRepository;
+import org.demointernetshop.model.dto.user.UserDto;
+import org.demointernetshop.model.dto.user.UserRegistrationDto;
+import org.demointernetshop.model.dto.user.UserUpdateDto;
+import org.demointernetshop.model.entity.User;
 import org.demointernetshop.repository.UserRepository;
 import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.DefaultValues;

@@ -1,10 +1,10 @@
 package org.demointernetshop.services;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.product.ProductDto;
-import org.demointernetshop.dto.product.ProductQuantityResponseDto;
-import org.demointernetshop.entity.product.Product;
-import org.demointernetshop.entity.product.ProductInfo;
+import org.demointernetshop.model.dto.product.ProductDto;
+import org.demointernetshop.model.dto.product.ProductQuantityResponseDto;
+import org.demointernetshop.model.entity.product.Product;
+import org.demointernetshop.model.entity.product.ProductInfo;
 import org.demointernetshop.repository.CategoryRepository;
 import org.demointernetshop.repository.ManufacturerRepository;
 import org.demointernetshop.repository.ProductInfoRepository;

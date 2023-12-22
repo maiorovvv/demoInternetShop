@@ -1,9 +1,9 @@
 package org.demointernetshop.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.entity.email.EmailRequest;
+import org.demointernetshop.model.entity.email.EmailRequest;
 
-import org.demointernetshop.mail.DemoInternetMailSender;
+import org.demointernetshop.services.mail.DemoInternetMailSender;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,12 +1,14 @@
 package org.demointernetshop.services;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.order.OrderDto;
-import org.demointernetshop.dto.order.OrderRequestDto;
-import org.demointernetshop.dto.product.ProductShortInfoDto;
-import org.demointernetshop.entity.*;
-import org.demointernetshop.entity.cart.Cart;
-import org.demointernetshop.entity.product.ProductInfo;
+import org.demointernetshop.model.dto.order.OrderDto;
+import org.demointernetshop.model.dto.order.OrderRequestDto;
+import org.demointernetshop.model.dto.product.ProductShortInfoDto;
+import org.demointernetshop.model.entity.Order;
+import org.demointernetshop.model.entity.OrderItem;
+import org.demointernetshop.model.entity.User;
+import org.demointernetshop.model.entity.cart.Cart;
+import org.demointernetshop.model.entity.product.ProductInfo;
 import org.demointernetshop.repository.*;
 import org.demointernetshop.services.exceptions.NotFoundException;
 import org.demointernetshop.services.utils.DefaultValues;

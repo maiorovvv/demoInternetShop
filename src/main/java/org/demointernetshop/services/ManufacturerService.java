@@ -1,7 +1,7 @@
 package org.demointernetshop.services;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.product.ManufacturerDto;
+import org.demointernetshop.model.dto.product.ManufacturerDto;
 import org.demointernetshop.repository.ManufacturerRepository;
 import org.demointernetshop.services.utils.Converters;
 import org.springframework.stereotype.Service;

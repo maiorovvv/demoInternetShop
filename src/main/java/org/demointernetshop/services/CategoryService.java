@@ -1,8 +1,8 @@
 package org.demointernetshop.services;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.product.CategoryDto;
-import org.demointernetshop.dto.product.CategoryWithPricesDto;
+import org.demointernetshop.model.dto.product.CategoryDto;
+import org.demointernetshop.model.dto.product.CategoryWithPricesDto;
 import org.demointernetshop.repository.CategoryRepository;
 import org.demointernetshop.repository.ProductInfoRepository;
 import org.demointernetshop.services.exceptions.NotFoundException;

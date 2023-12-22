@@ -1,9 +1,8 @@
 package org.demointernetshop.controllers.product;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.product.CategoryDto;
-import org.demointernetshop.dto.product.CategoryWithPricesDto;
-import org.demointernetshop.dto.product.ProductDto;
+import org.demointernetshop.model.dto.product.CategoryDto;
+import org.demointernetshop.model.dto.product.CategoryWithPricesDto;
 import org.demointernetshop.services.CategoryService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

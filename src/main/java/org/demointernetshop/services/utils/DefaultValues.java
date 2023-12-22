@@ -1,10 +1,10 @@
 package org.demointernetshop.services.utils;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.entity.OrderStatus;
-import org.demointernetshop.entity.PaymentMethod;
-import org.demointernetshop.entity.PaymentStatus;
-import org.demointernetshop.entity.Role;
+import org.demointernetshop.model.entity.OrderStatus;
+import org.demointernetshop.model.entity.PaymentMethod;
+import org.demointernetshop.model.entity.PaymentStatus;
+import org.demointernetshop.model.entity.Role;
 import org.demointernetshop.repository.OrderStatusRepository;
 import org.demointernetshop.repository.PaymentMethodRepository;
 import org.demointernetshop.repository.PaymentStatusRepository;

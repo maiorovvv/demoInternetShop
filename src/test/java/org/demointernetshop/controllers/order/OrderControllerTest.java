@@ -1,8 +1,8 @@
 package org.demointernetshop.controllers.order;
 
 import org.demointernetshop.configuration.security.SecurityConfig;
-import org.demointernetshop.dto.order.OrderDto;
-import org.demointernetshop.dto.order.OrderRequestDto;
+import org.demointernetshop.model.dto.order.OrderDto;
+import org.demointernetshop.model.dto.order.OrderRequestDto;
 import org.demointernetshop.services.OrderService;
 import org.demointernetshop.services.auth.CustomUserDetailService;
 import org.demointernetshop.services.auth.JwtTokenProvider;
@@ -12,12 +12,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;

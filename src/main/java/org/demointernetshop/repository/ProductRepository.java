@@ -1,7 +1,8 @@
 package org.demointernetshop.repository;
 
-import org.demointernetshop.entity.*;
-import org.demointernetshop.entity.product.Product;
+import org.demointernetshop.model.entity.Category;
+import org.demointernetshop.model.entity.Manufacturer;
+import org.demointernetshop.model.entity.product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

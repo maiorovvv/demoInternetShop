@@ -1,6 +1,6 @@
 package org.demointernetshop.repository;
 
-import org.demointernetshop.entity.OrderStatus;
+import org.demointernetshop.model.entity.OrderStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

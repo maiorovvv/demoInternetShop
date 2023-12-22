@@ -1,11 +1,10 @@
 package org.demointernetshop.controllers.product;
 
-import org.demointernetshop.dto.product.ProductDto;
+import org.demointernetshop.model.dto.product.ProductDto;
 import org.demointernetshop.services.ProductService;
 import org.demointernetshop.services.auth.CustomUserDetailService;
 import org.demointernetshop.services.auth.JwtTokenProvider;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -15,7 +14,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 @WebMvcTest(ProductController.class)
 class ProductControllerTest {

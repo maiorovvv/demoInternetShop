@@ -1,10 +1,8 @@
 package org.demointernetshop.controllers.order;
 
 import lombok.RequiredArgsConstructor;
-import org.demointernetshop.dto.cart.CartChangeDto;
-import org.demointernetshop.dto.cart.CartDto;
-import org.demointernetshop.dto.order.OrderDto;
-import org.demointernetshop.dto.order.OrderRequestDto;
+import org.demointernetshop.model.dto.order.OrderDto;
+import org.demointernetshop.model.dto.order.OrderRequestDto;
 import org.demointernetshop.services.OrderService;
 import org.springframework.web.bind.annotation.*;
 

@@ -39,7 +39,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/products/**").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
                         .requestMatchers("/api/products/category/**").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
                         .requestMatchers("/api/products/manufacturer/**").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
-                        .requestMatchers("/api/users/**"). hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
+                        .requestMatchers("/api/users/**").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
                         .requestMatchers("/api/orders/**").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
                         .anyRequest().hasAnyAuthority("ROLE_ADMIN"))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

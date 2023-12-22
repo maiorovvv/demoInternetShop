@@ -1,6 +1,7 @@
 package org.demointernetshop.controllers.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.demointernetshop.anotations.WithMockAdmin;
 import org.demointernetshop.configuration.security.SecurityConfig;
 import org.demointernetshop.controllers.order.OrderController;
 import org.demointernetshop.model.dto.user.UserDto;
@@ -41,7 +42,8 @@ class UserControllerTest {
     private CustomUserDetailService customUserDetailService;
 
     @Test
-    @WithMockUser
+    //@WithMockUser(username = "admin", roles = "ADMIN")
+    @WithMockAdmin
     void testRegisterUser() throws Exception {
 
         UserRegistrationDto registrationDto = new UserRegistrationDto();
